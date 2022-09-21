@@ -240,6 +240,12 @@ $delete: #FC8F1A;
   color: $delete;
 }
 
+.item__delete:hover {
+  box-shadow: 0.2rem 0.2rem 0.2rem $main-col;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .item__new {
   display: block;
   text-align: center;
