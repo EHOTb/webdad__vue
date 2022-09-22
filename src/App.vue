@@ -69,34 +69,12 @@
 export default {
   name: "App",
 };
+
 </script>
 
 <style lang="scss">
-@mixin font-main {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.25rem;
-  src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap'),
-}
-
-@mixin font-second {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  font-size: 1.25rem;
-  src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap'),
-}
-
-$main-col: #7F4B13;
-$main-col-42: #C9955D;
-$grad-sec-col: #FEB567;
-$grad-main-col: #FF7E5F;
-$bg-color-dark: #FFCA93;
-$bg-color-light: #FFDFBE;
-$bg-color-ultraLight: #FFF4E9;
-$bg-color-maxLight: #FFECD8;
-$shadow: #FE9262;
-$delete: #FC8F1A;
+@import "./assets/styles/var.scss";
+@import './assets/styles/normalize.scss';
 
 .wrapper {
   @include font-main;
@@ -180,8 +158,8 @@ $delete: #FC8F1A;
   .custom-checkbox+label::before {
     content: '';
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     flex-shrink: 0;
     flex-grow: 0;
     border: 0.15rem solid $grad-sec-col;
@@ -235,7 +213,7 @@ $delete: #FC8F1A;
   display: flex;
   justify-content: center;
   border: 0.15rem solid $delete;
-  padding: 0 0.28rem 0.1rem;
+  padding: 0.5rem 0.5rem 0.3rem;
   border-radius: 20%;
   color: $delete;
 }
@@ -259,6 +237,11 @@ $delete: #FC8F1A;
   display: flex;
   justify-content: space-between;
   color: $main-col-42;
+  height: 8vh;
+
+  @media (max-width:850px) {
+    height: 16vh;
+  }
 }
 
 .footer__page {
