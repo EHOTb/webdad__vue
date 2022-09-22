@@ -1,0 +1,25 @@
+@mixin font-main {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap'),
+}
+
+@mixin font-second {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap'),
+}
+
+$main-col: #7F4B13;
+$main-col-42: #C9955D;
+$grad-sec-col: #FEB567;
+$grad-main-col: #FF7E5F;
+$bg-color-dark: #FFCA93;
+$bg-color-light: #FFDFBE;
+$bg-color-ultraLight: #FFF4E9;
+$bg-color-maxLight: #FFECD8;
+$shadow: #FE9262;
+$delete: #FC8F1A;
