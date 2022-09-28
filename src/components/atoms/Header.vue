@@ -1,14 +1,15 @@
 <template>
     <div :class="$style.header">
         <p>to do list</p>
+        <p>{{name}}</p>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Header"
+    name: "Header",
+    props: ['name']
 }
-
 </script>
 
 <style lang="scss" module>

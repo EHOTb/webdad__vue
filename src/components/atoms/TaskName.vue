@@ -1,13 +1,16 @@
 <template>
     <div>
-        <input type="checkbox" :class="$style.custom" id="doIt" name="doIt">
-        <label for="doIt1">Task1 </label>
+        <input type="checkbox" :class="$style.custom" :checked="isChecked" id="doIt" name="doIt">
+        <label :class="$style.label" for="doIt1">{{name}} </label>
+        <!-- <p>{{isActive}}</p> -->
+
     </div>
 </template>
 
 <script>
 export default {
-    name: "TaskName"
+    name: "TaskName",
+    props: ['name', 'isActive']
 }
 </script >
 

@@ -1,6 +1,6 @@
 <template>
     <div :class="$style.new">
-        <input class="item__input" type="text" name="text" id="newTask" placeholder="Add new task">
+        <input :class="$style.input" type="text" name="text" id="newTask" placeholder="Add new task">
     </div>
 </template>
 
@@ -26,14 +26,24 @@ export default {
     background-color: $bg-color-maxLight;
     color: $bg-color-dark;
     border: 0.2rem dashed $bg-color-dark;
-
 }
 
-.new::placeholder {
+.input {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: $bg-color-maxLight;
+    border: none;
+}
+
+input::placeholder {
     text-align: center;
     color: $bg-color-dark;
     font-size: 1.25rem;
-
 }
 </style>
 

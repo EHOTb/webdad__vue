@@ -4,11 +4,14 @@
       <img class="wrapper__img" src="./assets/Group.svg" alt="">
       <div class="body__wrapper">
         <div class="todo__main">
-          <Header />
-          <div class="todo__body">
-            <div class="todo__items">
-              <div class="todo__item">
 
+          <Header name="ALex" />
+          <div class="todo__body">
+            <ToDoItems />
+
+
+            <!-- <div class="todo__items">
+              <div class="todo__item">
                 <TaskName />
                 <Delete />
               </div>
@@ -22,49 +25,57 @@
                 <label for="doIt3">Task3 </label>
                 <Delete />
               </div>
-              <!-- <div class="todo__item item__new">
-                <input class="item__input" type="text" name="text" id="newTask" placeholder="Add new task">
-
-              </div> -->
               <NewTask />
-            </div>
+            </div> -->
+            <NewTask />
           </div>
-          <div class="todo__footer">
-            <div class="footer__page">
-              <p>1/3 Left</p>
-            </div>
-            <div class="footer__sort">
-              <div class="form__radio">
-                <input id="radio-1" type="radio" name="radio" value="1" checked>
-                <label for="radio-1" class="radio__text">All</label>
-              </div>
-              <div class="form__radio">
-                <input id="radio-2" type="radio" name="radio" value="2">
-                <label for="radio-2" class="radio__text">Active</label>
-              </div>
-              <div class="form__radio">
-                <input id="radio-3" type="radio" name="radio" value="3">
-                <label for="radio-3" class="radio__text">Completed</label>
-              </div>
-            </div>
+          <div>
+            <Footer />
+
+
           </div>
         </div>
       </div>
     </div>
-
   </div>
+
+
 </template>
 
 <script>
 import Header from '@/components/atoms/Header';
-import Delete from "@/components/atoms/Delete";
-import TaskName from "@/components/atoms/TaskName";
+// import Delete from "@/components/atoms/Delete";
+// import TaskName from "@/components/atoms/TaskName";
 import NewTask from "@/components/atoms/NewTask";
-// import Delete1 from "./components/atoms/delete.vue";
-// import AddTask from './components/atoms/AddTask.vue';
+// import Pages from "@/components/atoms/Pages";
+// import FooterRadio from "@/components/atoms/FooterRadio";
+import Footer from "@/components/molecules/Footer";
+import ToDoItems from "@/components/molecules/ToDoItems";
+// import TodoItems from './components/molecules/TodoItems.vue';
+
 export default {
   name: "App",
-  components: { Header, Delete, TaskName, NewTask }
+  components: { Header, Footer, NewTask, ToDoItems },
+  data() {
+    return {
+      users:
+        [{
+          name: 'Task1',
+          isActive: true,
+          id: '1',
+        },
+        {
+          name: 'Task2',
+          isActive: false,
+          id: '2',
+        }, {
+          name: 'Task3',
+          isActive: false,
+          id: '3',
+        }
+        ]
+    }
+  }
 };
 
 </script>
@@ -131,40 +142,36 @@ export default {
   background-color: $bg-color-ultraLight;
 }
 
-.todo__items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.todo__item {
-  background: $bg-color-light ;
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 1.2rem;
 
 
-  .item__input {
-    display: block;
-    width: 100%;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: $bg-color-maxLight;
-    border: none;
-  }
+// .todo__item {
+//   background: $bg-color-light ;
+//   display: flex;
+//   justify-content: space-between;
+//   width: 80%;
+//   padding: 1rem;
+//   border-radius: 1rem;
+//   margin: 1.2rem;
 
-  .item__input::placeholder {
-    text-align: center;
-    color: $bg-color-dark;
-    font-size: 1.25rem;
-  }
-}
+
+//   .item__input {
+//     display: block;
+//     width: 100%;
+//     font-family: inherit;
+//     font-size: 1rem;
+//     font-weight: 400;
+//     line-height: 1.5;
+//     color: #212529;
+//     background-color: $bg-color-maxLight;
+//     border: none;
+//   }
+
+//   .item__input::placeholder {
+//     text-align: center;
+//     color: $bg-color-dark;
+//     font-size: 1.25rem;
+//   }
+// }
 
 .todo__item:first-child {
   margin-top: 1.9rem;
@@ -196,11 +203,6 @@ export default {
   }
 }
 
-.footer__page {
-  padding-left: 2vw;
-  display: flex;
-  align-items: center;
-}
 
 .footer__sort {
   display: flex;
@@ -220,35 +222,6 @@ export default {
     align-items: flex-start;
   }
 
-  .form__radio input[type=radio] {
-    opacity: 0;
-  }
 
-  .form__radio label {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    padding-left: 1vw;
-    margin-right: 0;
-    line-height: 1rem;
-  }
-
-  .form__radio label:before {
-    content: "";
-    display: inline-block;
-    width: 17px;
-    height: 18px;
-    position: absolute;
-    left: 0.9rem;
-    bottom: -0.3rem;
-  }
-
-  input[type=radio]:checked~.radio__text {
-    border: 0.15rem solid $main-col-42;
-    border-radius: 1rem;
-    padding: 0.2rem 0.6rem;
-    box-shadow: 0.2rem 0.2rem 0.3rem $main-col;
-    transition: 0.4s;
-  }
 }
 </style>
