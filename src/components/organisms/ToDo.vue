@@ -1,6 +1,6 @@
 <template>
   <div>
-  <ToDoItem {{name}}
+  <ToDoItem 
  
   />
 </div>
