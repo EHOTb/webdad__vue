@@ -1,31 +1,33 @@
 <template>
-    <div>
-        <input type="checkbox" :class="$style.custom" :checked="isChecked" id="doIt" name="doIt">
-        <label :class="$style.label" for="doIt1">{{name}} </label>
-        <!-- <p>{{isActive}}</p> -->
-
-    </div>
+  <div >
+  <div :class="$style.item">
+    <input type="checkbox" :class="$style.custom" id="doIt" name="doIt" />
+    <label :class="$style.label" for="doIt1">{{ name }} + '123' </label>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
-    name: "TaskName",
-    props: ['name', 'isActive']
-}
-</script >
+  name: "TaskName",
+  
+  props: ["name", "isActive"],
+};
+</script>
 
-
-<style lang = "scss" module >
+<style lang="scss" module>
 @import "../../assets/styles/var.scss";
 
-.custom {
+.item {
+  display: flex;
+  text-align: center;
+  .custom {
     position: absolute;
     opacity: 0;
     z-index: -1;
-}
-
-.custom+label::before {
-    content: '';
+  }
+  .custom + label::before {
+    content: "";
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
@@ -36,18 +38,17 @@ export default {
     background-position: center center;
     border-radius: 0.25rem;
     margin-right: 0.5rem;
-}
-
-.custom:checked+label::before {
+  }
+  .custom:checked + label::before {
     background-color: $grad-sec-col;
-    background-image: url('../../assets/ok.svg');
+    background-image: url("../../assets/ok.svg");
     background-repeat: no-repeat;
     background-position: 40% 40%;
-}
-
-.custom+label {
+  }
+  .custom + label {
     display: inline-flex;
     align-items: center;
     user-select: none;
+  }
 }
 </style>

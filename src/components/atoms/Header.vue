@@ -1,7 +1,6 @@
 <template>
     <div :class="$style.header">
         <p>to do list</p>
-        <p>{{name}}</p>
     </div>
 </template>
 

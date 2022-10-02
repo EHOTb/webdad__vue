@@ -4,8 +4,8 @@
 
 <script>
 export default {
-    name: "Delete"
-}
+    name: "Delete",
+};
 </script>
 
 <style lang="scss" module>

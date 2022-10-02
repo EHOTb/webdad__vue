@@ -1,6 +1,6 @@
 <template>
-    <div :class="$style.page">
-        <p>1/3 Left</p>
+<div :class="$style.page">
+      <p>1/3 Left</p>
     </div>
 </template>
 
@@ -14,8 +14,8 @@ export default {
 @import "../../assets/styles/var.scss";
 
 .page {
-    padding-left: 2vw;
-    display: flex;
-    align-items: center;
+  padding-left: 2vw;
+  display: flex;
+  align-items: center;
 }
 </style>
