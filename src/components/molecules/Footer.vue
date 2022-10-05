@@ -1,8 +1,7 @@
 <template>
   <div :class="$style.footer">
-    <Pages/>
-    <FooterRadio/>
-    
+    <Pages />
+      <FooterRadio />
   </div>
 </template>
 
@@ -14,6 +13,7 @@ export default {
     Pages,
     FooterRadio,
   },
+  props :["name"]
 };
 </script>
 
@@ -27,10 +27,8 @@ export default {
   color: $main-col-42;
   height: 8vh;
 
-  @media (max-width:850px) {
+  @media (max-width: 850px) {
     height: 16vh;
   }
 }
-
-
 </style>

@@ -1,9 +1,7 @@
 <template>
   <div>
-  <ToDoItem 
- 
-  />
-</div>
+    <ToDoItem />
+  </div>
 </template>
 
 <script>
@@ -13,7 +11,7 @@ export default {
   components: {
     ToDoItem,
   },
-  props: ["name", "isActive"],
+  props: ["toDo", "isActive"],
   
 };
 </script>

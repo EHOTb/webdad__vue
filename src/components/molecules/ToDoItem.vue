@@ -1,18 +1,18 @@
 <template>
   <div :class="$style.body">
     <div :class="$style.items">
-      <div :class="$style.item">
+      <div
+        :class="$style.item"
+        v-for="toDo in toDos"
+        :key="toDo.key"
+        :isActive="toDo.isActive"
+        :id="toDo.id"
+      >
+        {{ toDo.name }}
         <TaskName />
         <Delete />
       </div>
-      <div :class="$style.item">
-        <TaskName />
-        <Delete />
-      </div>
-      <div :class="$style.item">
-        <TaskName />
-        <Delete />
-      </div>
+
       <NewTask />
     </div>
   </div>
@@ -24,7 +24,28 @@ import TaskName from "@/components/atoms/TaskName";
 import NewTask from "@/components/atoms/NewTask";
 export default {
   components: { Delete, TaskName, NewTask },
-  props: [],
+  props: ["toDo"],
+  data() {
+    return {
+      toDos: [
+        {
+          name: "Task1",
+          isActive: true,
+          id: "1",
+        },
+        {
+          name: "Task2",
+          isActive: false,
+          id: "2",
+        },
+        {
+          name: "Task3",
+          isActive: false,
+          id: "3",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -32,13 +53,14 @@ export default {
 @import "../../assets/styles/var.scss";
 
 .item {
-  background: $bg-color-light ;
+  background: $bg-color-light;
   display: flex;
   justify-content: space-between;
   width: 80%;
   padding: 1rem;
   border-radius: 1rem;
-  margin: 1.2rem;}
+  margin: 1.2rem;
+}
 
 .body {
   background-color: $bg-color-ultraLight;
@@ -63,5 +85,4 @@ export default {
 .item:last-child {
   margin-bottom: 1.9rem;
 }
-
 </style>

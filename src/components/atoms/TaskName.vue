@@ -1,8 +1,11 @@
-<template>
+<template >
   <div >
-  <div :class="$style.item">
+  <div :class="$style.item"  v-for="toDo in toDos" 
+:key="toDo.key"
+:isActive="toDo.isActive"
+:id="toDo.id">
     <input type="checkbox" :class="$style.custom" id="doIt" name="doIt" />
-    <label :class="$style.label" for="doIt1">{{ name }} + '123' </label>
+    <label :class="$style.label" for="doIt1"> {{toDo.name}} </label>
   </div>
 </div>
 </template>
@@ -10,8 +13,9 @@
 <script>
 export default {
   name: "TaskName",
+
+  props: ["toDos"],
   
-  props: ["name", "isActive"],
 };
 </script>
 
