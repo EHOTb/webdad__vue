@@ -5,7 +5,10 @@
       <div :class="$style.body">
         <div :class="$style.main">
           <Header />
-          <ToDo />
+          <div :class="$style.item">
+            <ToDo />
+            <NewTask />
+          </div>
           <Footer />
         </div>
       </div>
@@ -15,33 +18,13 @@
 
 <script>
 import Header from "@/components/atoms/Header";
-import Footer from "@/components/molecules/Footer";
+import Footer from "@/components/organisms/Footer";
 import ToDo from "@/components/organisms/ToDo";
+import NewTask from "./components/atoms/NewTask.vue";
 
 export default {
   name: "App",
-  components: { ToDo, Header, Footer },
-  data() {
-    return {
-      toDos: [
-        {
-          name: "Task1",
-          isActive: true,
-          id: "1",
-        },
-        {
-          name: "Task2",
-          isActive: false,
-          id: "2",
-        },
-        {
-          name: "Task3",
-          isActive: false,
-          id: "3",
-        },
-      ],
-    };
-  },
+  components: { ToDo, Header, Footer, NewTask },
 };
 </script>
 
@@ -94,75 +77,13 @@ export default {
   }
 }
 
-.todo__body {
+.body {
   background-color: $bg-color-ultraLight;
 }
 
-// .todo__item {
-//   background: $bg-color-light ;
-//   display: flex;
-//   justify-content: space-between;
-//   width: 80%;
-//   padding: 1rem;
-//   border-radius: 1rem;
-//   margin: 1.2rem;
-
-//   .item__input {
-//     display: block;
-//     width: 100%;
-//     font-family: inherit;
-//     font-size: 1rem;
-//     font-weight: 400;
-//     line-height: 1.5;
-//     color: #212529;
-//     background-color: $bg-color-maxLight;
-//     border: none;
-//   }
-
-//   .item__input::placeholder {
-//     text-align: center;
-//     color: $bg-color-dark;
-//     font-size: 1.25rem;
-//   }
-// }
-
-.todo__item:first-child {
-  margin-top: 1.9rem;
-}
-
-.todo__item:last-child {
-  margin-bottom: 1.9rem;
-}
-
-
-.todo__footer {
-  background-color: $bg-color-dark;
+.items {
   display: flex;
-  justify-content: space-between;
-  color: $main-col-42;
-  height: 8vh;
-
-  @media (max-width: 850px) {
-    height: 16vh;
-  }
-}
-
-.footer__sort {
-  display: flex;
-  padding-right: 2vw;
-  gap: 2rem;
+  flex-direction: column;
   align-items: center;
-
-  @media (max-width: 1024px) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 850px) {
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 </style>

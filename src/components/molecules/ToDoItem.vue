@@ -1,50 +1,19 @@
 <template>
-  <div :class="$style.body">
-    <div :class="$style.items">
-      <div
-        :class="$style.item"
-        v-for="toDo in toDos"
-        :key="toDo.key"
-        :isActive="toDo.isActive"
-        :id="toDo.id"
-      >
-        {{ toDo.name }}
-        <TaskName />
-        <Delete />
-      </div>
-
-      <NewTask />
-    </div>
+  <div :class="[$style.item, $style.body]">
+    <Checkbox :checked="checked" />
+    {{ name }}
+    <Delete />
   </div>
 </template>
 
 <script>
 import Delete from "@/components/atoms/Delete";
-import TaskName from "@/components/atoms/TaskName";
-import NewTask from "@/components/atoms/NewTask";
+import Checkbox from "@/components/atoms/Checkbox";
 export default {
-  components: { Delete, TaskName, NewTask },
-  props: ["toDo"],
-  data() {
-    return {
-      toDos: [
-        {
-          name: "Task1",
-          isActive: true,
-          id: "1",
-        },
-        {
-          name: "Task2",
-          isActive: false,
-          id: "2",
-        },
-        {
-          name: "Task3",
-          isActive: false,
-          id: "3",
-        },
-      ],
-    };
+  components: { Delete, Checkbox },
+  props: {
+    checked: Boolean,
+    name: String,
   },
 };
 </script>

@@ -1,27 +1,27 @@
-<template >
-  <div >
-  <div :class="$style.item"  v-for="toDo in toDos" 
-:key="toDo.key"
-:isActive="toDo.isActive"
-:id="toDo.id">
-    <input type="checkbox" :class="$style.custom" id="doIt" name="doIt" />
-    <label :class="$style.label" for="doIt1"> {{toDo.name}} </label>
+<template>
+  <div :class="$style.items">
+    <label :class="$style.item">
+      <input type="checkbox" :class="$style.custom" :checked="checked" />
+      <span :class="$style.label" />
+    </label>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-  name: "TaskName",
-
-  props: ["toDos"],
-  
+  name: "Checkbox",
+  props: { checked: Boolean },
 };
 </script>
 
 <style lang="scss" module>
 @import "../../assets/styles/var.scss";
 
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .item {
   display: flex;
   text-align: center;
@@ -30,7 +30,7 @@ export default {
     opacity: 0;
     z-index: -1;
   }
-  .custom + label::before {
+  .custom + span::before {
     content: "";
     display: inline-block;
     width: 1.5rem;
@@ -43,13 +43,13 @@ export default {
     border-radius: 0.25rem;
     margin-right: 0.5rem;
   }
-  .custom:checked + label::before {
+  .custom:checked + span::before {
     background-color: $grad-sec-col;
     background-image: url("../../assets/ok.svg");
     background-repeat: no-repeat;
     background-position: 40% 40%;
   }
-  .custom + label {
+  .custom + span {
     display: inline-flex;
     align-items: center;
     user-select: none;
