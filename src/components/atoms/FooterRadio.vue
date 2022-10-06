@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.sort">
     <label :class="$style.radio">
-      <input type="radio" :picked="picked" />
+      <input type="radio" :picked="picked" name="radio"/>
       <span :class="$style.text">{{ name }}</span>
     </label>
   </div>
