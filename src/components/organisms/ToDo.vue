@@ -6,6 +6,7 @@
       :key="el.id"
       :checked="el.isActive"
       :name="el.name"
+      :radio="el.type"
     />
   </div>
 </template>
@@ -46,16 +47,6 @@ export default {
 .items {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-.item {
-  background: $bg-color-light;
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 1.2rem;
   align-items: center;
 }
 </style>

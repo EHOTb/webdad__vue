@@ -1,5 +1,5 @@
 <template>
-  <div :class="[$style.item, $style.body]">
+  <div :class="$style.item">
     <Checkbox :checked="checked" />
     {{ name }}
     <Delete />
@@ -29,10 +29,7 @@ export default {
   padding: 1rem;
   border-radius: 1rem;
   margin: 1.2rem;
-}
-
-.body {
-  background-color: $bg-color-ultraLight;
+  align-items: center;
 }
 
 .items {

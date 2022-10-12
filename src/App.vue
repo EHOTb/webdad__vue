@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <div :class="$style.wrapper">
-      <img :class="$style.img" src="./assets/Group.svg" />
-      <div :class="$style.body">
-        <div :class="$style.main">
-          <Header />
-          <div :class="$style.item">
-            <ToDo />
-            <NewTask />
-          </div>
-          <Footer />
+  <div :class="$style.wrapper">
+    <img :class="$style.img" src="./assets/Group.svg" />
+    <div :class="$style.body">
+      <div :class="$style.main">
+        <Header />
+        <div :class="$style.item">
+          <ToDo />
+          <NewTask />
         </div>
+        <Footer />
       </div>
     </div>
   </div>
@@ -67,6 +65,7 @@ export default {
 
 .main {
   width: 40vw;
+  background-color: $bg-color-ultraLight;
 
   @media (max-width: 850px) {
     width: 70vw;
@@ -75,10 +74,6 @@ export default {
   @media (max-width: 600px) {
     width: 95vw;
   }
-}
-
-.body {
-  background-color: $bg-color-ultraLight;
 }
 
 .items {

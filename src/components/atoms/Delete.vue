@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div :class="$style.delete">&#10006;</div>
-  </div>
+  <div :class="$style.delete">&#10006;</div>
 </template>
 
 <script>
@@ -20,11 +18,11 @@ export default {
   padding: 0.5rem 0.5rem 0.3rem;
   border-radius: 20%;
   color: $delete;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .delete:hover {
   box-shadow: 0.2rem 0.2rem 0.2rem $main-col;
-  cursor: pointer;
-  transition: 0.3s;
 }
 </style>

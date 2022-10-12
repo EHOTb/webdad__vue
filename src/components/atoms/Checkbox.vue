@@ -1,10 +1,8 @@
 <template>
-  <div :class="$style.items">
-    <label :class="$style.item">
-      <input type="checkbox" :class="$style.custom" :checked="checked" />
-      <span :class="$style.label" />
-    </label>
-  </div>
+  <label :class="$style.item">
+    <input type="checkbox" :class="$style.custom" :checked="checked" />
+    <span />
+  </label>
 </template>
 
 <script>
@@ -17,11 +15,6 @@ export default {
 <style lang="scss" module>
 @import "../../assets/styles/var.scss";
 
-.items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .item {
   display: flex;
   text-align: center;

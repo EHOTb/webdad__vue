@@ -14,7 +14,7 @@ export default {
 @import "../../assets/styles/var.scss";
 
 .page {
-  padding: 2vw;
+  padding: 3rem;
   display: flex;
   align-items: center;
 }

@@ -1,12 +1,18 @@
 <template>
   <div :class="$style.footer">
     <Pages />
-    <div :class="$style.radio">
+    <div
+      :class="$style.radio"
+      v-for="option in options"
+      :key="option.id"
+      :title="option.title"
+    >
       <FooterRadio
-        v-for="sort in footerSort"
+        v-for="(sort, index) in footerSort"
         :key="sort.id"
-        :picked="sort.picked"
-        :name="sort.name"
+        :picked="option.picked[index]"
+        :name="option.title[index]"
+        :type="sort.radio"
       />
     </div>
   </div>
@@ -25,18 +31,21 @@ export default {
       footerSort: [
         {
           id: "1",
-          name: "All",
-          picked: true,
+          type: "radio",
         },
         {
           id: "2",
-          name: "Active",
-          picked: false,
+          type: "radio",
         },
         {
           id: "3",
-          name: "Completed",
-          picked: false,
+          type: "radio",
+        },
+      ],
+      options: [
+        {
+          title: ["All", "Active", "Completed"],
+          picked: [true, false, false],
         },
       ],
     };
@@ -61,11 +70,10 @@ export default {
     display: flex;
     align-items: flex-end;
     padding-bottom: 3vh;
-    @media(max-width: 1025px){
-flex-direction: column;
-align-items: flex-start;
+    @media (max-width: 1025px) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
-
 }
 </style>
