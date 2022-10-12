@@ -12,7 +12,7 @@
         :key="sort.id"
         :picked="option.picked[index]"
         :name="option.title[index]"
-        :type="sort.radio"
+        :type="option.radio"
       />
     </div>
   </div>
@@ -46,6 +46,7 @@ export default {
         {
           title: ["All", "Active", "Completed"],
           picked: [true, false, false],
+          type: "radio",
         },
       ],
     };
