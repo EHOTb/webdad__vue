@@ -2,17 +2,13 @@
   <div :class="$style.footer">
     <Pages />
     <div
-      :class="$style.radio"
-      v-for="option in options"
-      :key="option.id"
-      :title="option.title"
-    >
+      :class="$style.radio"    >
       <FooterRadio
-        v-for="(sort, index) in footerSort"
-        :key="sort.id"
-        :picked="option.picked[index]"
-        :name="option.title[index]"
-        :type="option.radio"
+        v-for="(sort, index) in filters"
+        :key="index"
+  
+        :name="sort"
+        :type="radio"
       />
     </div>
   </div>
@@ -28,27 +24,8 @@ export default {
   },
   data() {
     return {
-      footerSort: [
-        {
-          id: "1",
-          type: "radio",
-        },
-        {
-          id: "2",
-          type: "radio",
-        },
-        {
-          id: "3",
-          type: "radio",
-        },
-      ],
-      options: [
-        {
-          title: ["All", "Active", "Completed"],
-          picked: [true, false, false],
-          type: "radio",
-        },
-      ],
+      filters: ["All", "Active", "Completed"],
+      filter: "All",
     };
   },
 };
