@@ -3,7 +3,7 @@
     <Pages />
     <div :class="$style.radio">
       <FooterRadio
-        v-for="(sort, index) in $store.getters.filterTasks"
+        v-for="(sort, index) in $store.state.filters"
         :key="index"
         :name="sort"
         :isActive="$store.state.filter"
