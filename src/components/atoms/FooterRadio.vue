@@ -1,7 +1,7 @@
 <template>
   <label :class="$style.radio">
-    <input type="radio" :picked="picked" name="name" />
-    <span :class="$style.text">{{ name }}</span>
+    <input type="radio" name="name" />
+    <span :class="$style.text"> {{ name }} </span>
   </label>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: "FooterRadio",
   props: {
-    picked: Boolean,
+    filter: String,
     name: String,
     type: String,
   },

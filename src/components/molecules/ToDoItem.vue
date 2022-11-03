@@ -1,8 +1,9 @@
 <template>
   <div :class="$style.item">
-    <Checkbox :checked="checked" />
+    <Checkbox :isChecked="isChecked" 
+    @checkCheckbox = "$emit('toggleCheckbox')"/>
     {{ name }}
-    <Delete />
+    <Delete @deleteToDo="$emit('deleteTask')"/>
   </div>
 </template>
 
@@ -12,7 +13,7 @@ import Checkbox from "@/components/atoms/Checkbox";
 export default {
   components: { Delete, Checkbox },
   props: {
-    checked: Boolean,
+    isChecked: Boolean,
     name: String,
   },
 };

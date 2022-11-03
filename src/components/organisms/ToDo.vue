@@ -2,42 +2,35 @@
   <div :class="$style.items">
     <ToDoItem
       :class="$style.item"
-      v-for="el in tasks"
+      v-for="el in TASKS"
       :key="el.id"
-      :checked="el.isActive"
+      :isChecked="el.isChecked"
       :name="el.name"
       :radio="el.type"
+      @deleteTask="() => closeTask(el.id)"
+      @toggleCheckbox="() => checkedTask(el.id)"
     />
   </div>
 </template>
 
 <script>
 import ToDoItem from "@/components/molecules/ToDoItem";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     ToDoItem,
   },
-  data() {
-    return {
-      tasks: [
-        {
-          id: "1",
-          name: "Task1",
-          isActive: true,
-        },
-        {
-          id: "2",
-          name: "Task2",
-          isActive: false,
-        },
-        {
-          id: "3",
-          name: "Task3",
-          isActive: false,
-        },
-      ],
-    };
+  computed: {
+    ...mapGetters(["TASKS"]),
+  },
+  methods: {
+    closeTask(id) {
+      this.$store.commit("DELETE_TASK", id);
+    },
+    checkedTask(id) {
+      this.$store.commit("CHECKED_TASK", id);
+    },
   },
 };
 </script>

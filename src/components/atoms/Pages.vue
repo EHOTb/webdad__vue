@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.page">
-    <p>1/3 Left</p>
+    {{ $store.state.tasks1.filter((task) => task.isChecked ==! true).length }} /
+    {{ $store.state.tasks1.length }} left
   </div>
 </template>
 
