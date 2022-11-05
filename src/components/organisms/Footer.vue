@@ -5,8 +5,8 @@
       <FooterRadio
         v-for="(sort, index) in $store.state.filters"
         :key="index"
-        :name="sort"
-        :isActive="$store.state.filter"
+        :name="sort.title"
+        :isActive="$store.state.filter == sort.title"
         @footerTab="() => activeTab(sort)"
       />
     </div>
@@ -25,7 +25,7 @@ export default {
   computed: {},
   methods: {
     activeTab(tabName) {
-      this.$store.commit("ACTIVE_TAB", tabName);
+      this.$store.commit("ACTIVE__TAB", tabName);
     },
   },
 };

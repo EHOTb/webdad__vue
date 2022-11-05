@@ -1,5 +1,8 @@
 <template>
-  <label :class="$style.radio">
+  <label
+    :class="[$style.radio, { [$style.active]: isActive }]"
+    @click="$emit('footerTab')"
+  >
     <input type="radio" name="name" />
     <span :class="$style.text"> {{ name }} </span>
   </label>
@@ -8,6 +11,10 @@
 <script>
 export default {
   name: "FooterRadio",
+  isActive: {
+    type: Boolean,
+    default: false,
+  },
   props: {
     filter: String,
     name: String,
@@ -50,6 +57,7 @@ export default {
   bottom: -0.3rem;
 }
 
+.active,
 input[type="radio"]:checked ~ span {
   border: 0.15rem solid $main-col-42;
   border-radius: 1rem;
