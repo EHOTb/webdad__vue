@@ -7,7 +7,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     tasks: [],
     state: {
-        filters: [{ title: "All" }, { title: "Active" }, { title: "Completed" }],
+        filters: ["All", "Active", "Completed"],
         filter: "All",
         tasks1: [{
                 id: "1",
@@ -45,8 +45,8 @@ const store = new Vuex.Store({
                 }
             });
         },
-        ACTIVE__TAB: (state, tabName) => {
-            state.filter = tabName;
+        SET_ACTIVE_TAB: (state, title) => {
+            state.filter = title;
         },
     },
     actions: {},
@@ -54,7 +54,7 @@ const store = new Vuex.Store({
         TASKS(state) {
             return state.tasks1;
         },
-        ACTIVE_TAB(state) {
+        FILTER_TAB(state) {
             if (state.filter === "All") {
                 return state.tasks1;
             }

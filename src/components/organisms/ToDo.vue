@@ -2,7 +2,7 @@
   <div :class="$style.items">
     <ToDoItem
       :class="$style.item"
-      v-for="el in $store.getters.filterTasks"
+      v-for="el in $store.getters.FILTER_TAB"
       :key="el.id"
       :isChecked="el.isChecked"
       :name="el.name"

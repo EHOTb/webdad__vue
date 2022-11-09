@@ -1,6 +1,11 @@
 <template>
   <label :class="$style.item">
-    <input type="checkbox" :class="$style.custom" :checked="isChecked" @click="$emit('checkCheckbox')" />
+    <input
+      type="checkbox"
+      :class="$style.custom"
+      :checked="isChecked"
+      @click="$emit('checkCheckbox')"
+    />
     <span />
   </label>
 </template>

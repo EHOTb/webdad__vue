@@ -1,9 +1,8 @@
 <template>
   <div :class="$style.item">
-    <Checkbox :isChecked="isChecked" 
-    @checkCheckbox = "$emit('toggleCheckbox')"/>
+    <Checkbox :isChecked="isChecked" @checkCheckbox="$emit('toggleCheckbox')" />
     {{ name }}
-    <Delete @deleteToDo="$emit('deleteTask')"/>
+    <Delete @deleteToDo="$emit('deleteTask')" />
   </div>
 </template>
 
