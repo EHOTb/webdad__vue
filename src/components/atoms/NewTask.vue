@@ -5,7 +5,7 @@
       type="text"
       name="text"
       placeholder="Add new task"
-      @keyup.enter="getValue"
+      @keyup.enter="createNewTask"
       v-model="value"
     />
   </div>
@@ -20,8 +20,8 @@ export default {
     };
   },
   methods: {
-    getValue() {
-      this.$emit("getValue", this.value);
+    createNewTask() {
+      this.$emit("createNewTask", this.value);
       this.value = "";
     },
   },

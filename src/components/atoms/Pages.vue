@@ -1,13 +1,15 @@
 <template>
-  <div :class="$style.page">
-    {{ $store.state.tasks1.filter((task) => task.isChecked == !true).length }} /
-    {{ $store.state.tasks1.length }} left
-  </div>
+  <div :class="$style.page">{{ doNotDo }} / {{ doDo }} left</div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Pages",
+  computed: {
+    ...mapGetters(["doNotDo", "doDo"]),
+  },
 };
 </script>
 

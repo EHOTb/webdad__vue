@@ -2,7 +2,7 @@
   <div :class="$style.item">
     <Checkbox :isChecked="isChecked" @checkCheckbox="$emit('toggleCheckbox')" />
     {{ name }}
-    <Delete @deleteToDo="$emit('deleteTask')" />
+    <Delete @delete="$emit('deleteItem')" />
   </div>
 </template>
 

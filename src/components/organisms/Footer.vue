@@ -3,11 +3,11 @@
     <Pages />
     <div :class="$style.radio">
       <FooterRadio
-        v-for="(sort, index) in $store.state.filters"
+        v-for="(sort, index) in filters"
         :key="index"
         :name="sort"
         :isActive="$store.state.filter == sort"
-        @footerTab="() => activeTab(sort)"
+        @changeFilter="() => activeTab(sort)"
       />
     </div>
   </div>
@@ -18,6 +18,11 @@ import Pages from "@/components/atoms/Pages";
 import FooterRadio from "@/components/atoms/FooterRadio";
 
 export default {
+  data() {
+    return {
+      filters: ["All", "Active", "Completed"],
+    };
+  },
   components: {
     Pages,
     FooterRadio,
@@ -25,7 +30,7 @@ export default {
   computed: {},
   methods: {
     activeTab(tabName) {
-      this.$store.commit("SET_ACTIVE_TAB", tabName);
+      this.$store.commit("setActiveTab", tabName);
     },
   },
 };

@@ -2,12 +2,12 @@
   <div :class="$style.items">
     <ToDoItem
       :class="$style.item"
-      v-for="el in $store.getters.FILTER_TAB"
+      v-for="el in filterTab"
       :key="el.id"
       :isChecked="el.isChecked"
       :name="el.name"
       :radio="el.type"
-      @deleteTask="() => closeTask(el.id)"
+      @deleteItem="() => closeTask(el.id)"
       @toggleCheckbox="() => checkedTask(el.id)"
     />
   </div>
@@ -22,14 +22,14 @@ export default {
     ToDoItem,
   },
   computed: {
-    ...mapGetters(["TASKS"]),
+    ...mapGetters(["filterTab"]),
   },
   methods: {
     closeTask(id) {
-      this.$store.commit("DELETE_TASK", id);
+      this.$store.commit("deleteTask", id);
     },
     checkedTask(id) {
-      this.$store.commit("CHECKED_TASK", id);
+      this.$store.commit("checkedTask", id);
     },
   },
 };

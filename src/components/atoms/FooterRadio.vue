@@ -1,7 +1,7 @@
 <template>
   <li
     :class="[$style.radio, { [$style.active]: isActive }]"
-    @click="$emit('footerTab')"
+    @click="$emit('changeFilter')"
   >
     {{ name }}
   </li>
@@ -31,8 +31,6 @@ export default {
   align-items: flex-end;
   padding-top: 1rem;
 }
-
-
 
 .active {
   border: 0.15rem solid $main-col-42;

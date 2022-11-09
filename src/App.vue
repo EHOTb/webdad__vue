@@ -6,7 +6,7 @@
         <Header />
         <div :class="$style.item">
           <ToDo />
-          <NewTask @getValue="(value) => addTask(value)" />
+          <NewTask @createNewTask="addTask" />
         </div>
         <Footer />
       </div>
@@ -25,7 +25,7 @@ export default {
   components: { ToDo, Header, Footer, NewTask },
   methods: {
     addTask(value) {
-      this.$store.commit("ADD_TASK", value);
+      this.$store.commit("addTask", value);
     },
   },
 };
