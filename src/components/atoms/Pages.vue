@@ -1,12 +1,15 @@
 <template>
-  <div :class="$style.page">
-    <p>1/3 Left</p>
-  </div>
+  <div :class="$style.page">{{ doNotDo }} / {{ doDo }} left</div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Pages",
+  computed: {
+    ...mapGetters(["doNotDo", "doDo"]),
+  },
 };
 </script>
 

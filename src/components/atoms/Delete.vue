@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.delete">&#10006;</div>
+  <div @click="$emit('delete')" :class="$style.delete">&#10006;</div>
 </template>
 
 <script>

@@ -1,14 +1,13 @@
 <template>
   <div :class="$style.footer">
     <Pages />
-    <div
-      :class="$style.radio"    >
+    <div :class="$style.radio">
       <FooterRadio
         v-for="(sort, index) in filters"
         :key="index"
-  
         :name="sort"
-        :type="radio"
+        :isActive="$store.state.filter == sort"
+        @changeFilter="() => activeTab(sort)"
       />
     </div>
   </div>
@@ -17,16 +16,22 @@
 <script>
 import Pages from "@/components/atoms/Pages";
 import FooterRadio from "@/components/atoms/FooterRadio";
+
 export default {
+  data() {
+    return {
+      filters: ["All", "Active", "Completed"],
+    };
+  },
   components: {
     Pages,
     FooterRadio,
   },
-  data() {
-    return {
-      filters: ["All", "Active", "Completed"],
-      filter: "All",
-    };
+  computed: {},
+  methods: {
+    activeTab(tabName) {
+      this.$store.commit("setActiveTab", tabName);
+    },
   },
 };
 </script>

@@ -6,7 +6,7 @@
         <Header />
         <div :class="$style.item">
           <ToDo />
-          <NewTask />
+          <NewTask @createNewTask="addTask" />
         </div>
         <Footer />
       </div>
@@ -23,6 +23,11 @@ import NewTask from "./components/atoms/NewTask.vue";
 export default {
   name: "App",
   components: { ToDo, Header, Footer, NewTask },
+  methods: {
+    addTask(value) {
+      this.$store.commit("addTask", value);
+    },
+  },
 };
 </script>
 

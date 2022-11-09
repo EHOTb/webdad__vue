@@ -5,6 +5,8 @@
       type="text"
       name="text"
       placeholder="Add new task"
+      @keyup.enter="createNewTask"
+      v-model="value"
     />
   </div>
 </template>
@@ -12,6 +14,17 @@
 <script>
 export default {
   name: "NewTask",
+  data() {
+    return {
+      value: "",
+    };
+  },
+  methods: {
+    createNewTask() {
+      this.$emit("createNewTask", this.value);
+      this.value = "";
+    },
+  },
 };
 </script>
 

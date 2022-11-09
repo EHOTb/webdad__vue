@@ -1,6 +1,11 @@
 <template>
   <label :class="$style.item">
-    <input type="checkbox" :class="$style.custom" :checked="checked" />
+    <input
+      type="checkbox"
+      :class="$style.custom"
+      :checked="isChecked"
+      @click="$emit('checkCheckbox')"
+    />
     <span />
   </label>
 </template>
@@ -8,7 +13,7 @@
 <script>
 export default {
   name: "Checkbox",
-  props: { checked: Boolean },
+  props: { isChecked: Boolean },
 };
 </script>
 
