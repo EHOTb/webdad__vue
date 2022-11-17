@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент FooterRadio Snapshot FooterRadio 1`] = `
+<li
+  class="radio"
+>
+  
+  
+
+</li>
+`;

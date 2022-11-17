@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент Header Snapshot Checkbox 1`] = `
+<div
+  class="header"
+>
+  to do list
+</div>
+`;

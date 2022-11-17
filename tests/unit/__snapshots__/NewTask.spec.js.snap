@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент NewTask Snapshot NewTask 1`] = `
+<div
+  class="wrapper"
+>
+  <input
+    class="input"
+    name="text"
+    placeholder="Add new task"
+    type="text"
+  />
+</div>
+`;
